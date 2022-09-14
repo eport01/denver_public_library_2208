@@ -22,10 +22,12 @@ RSpec.describe Author do
 
     jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
     # require 'pry'; binding.pry
-    expect(jane_eyre[0].class).to eq(Book)
-    expect(jane_eyre[0].title).to eq("Jane Eyre")
+    expect(jane_eyre.class).to eq(Book)
+    expect(jane_eyre.title).to eq("Jane Eyre")
     villette = charlotte_bronte.write("Villette", "1853")
         # require 'pry'; binding.pry
+    charlotte_bronte.add_books(jane_eyre)
+    charlotte_bronte.add_books(villette)    
     expect(charlotte_bronte.books).to eq([jane_eyre, villette])
   end
 end
